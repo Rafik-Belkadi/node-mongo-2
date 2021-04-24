@@ -18,7 +18,8 @@ const ArticleSchema = new Schema({
     likedBy: [{
         ref: "users",
         type: Schema.Types.ObjectID
-    }]
+    }],
+    coverPicture: String
 })
 
 // Création du model de la collection, qui permettera

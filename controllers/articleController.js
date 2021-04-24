@@ -6,13 +6,21 @@ const getAllArticles = (req, res) => {
 }
 
 const createArticle = (req, res) => {
+    var image = req.file
     var newArticle = new ArticleModel({
         titre: req.body.titre,
         contenu: req.body.contenu,
-        auteur: req.body.auteur
+        auteur: req.body.auteur,
+        coverPicture: image.filename
     })
     newArticle.save().then(data => res.json(data)).catch(err => res.json(err))
 }
+
+// Ajouter getArticleById
+
+// Delete article
+
+// Update Article
 
 const likeArticle = (req, res) => {
     var id = req.params.id

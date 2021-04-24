@@ -72,6 +72,7 @@ const signin = (req, res) => {
                 if (!same) res.json({ message: "email or password wrong" })
                 // Sinon , retourner le user et un message de bienvenu
 
+                // 
                 jwt.sign(email, my_secret, (err, token) => {
                     console.log(token)
                     if (err) res.json(err)
